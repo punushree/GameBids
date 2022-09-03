@@ -1,0 +1,68 @@
+.headingTertiary {
+  font-weight: 700;
+  font-size: 3.2rem;
+  margin-bottom: 1rem;
+  color:rgba(3, 84, 84, 0.553);
+}
+
+.auction {
+  font-size: 1.5rem;
+  background-image: linear-gradient(to right bottom, rgba(97, 97, 210, 0.7), rgba(199, 52, 52, 0.7));
+  line-height: 2rem;
+  color: rgb(134, 230, 182);
+  text-align: center;
+  padding: 2.5rem 1rem;
+}
+
+.auctionList {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.auctionCard {
+  padding: 1rem .5rem;
+  font-weight: 500;
+  border-radius: 4px;
+  background-color: rgb(246, 239, 239, 0.2);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
+  margin: 1.5rem;
+  padding: 1.5rem 1.5rem;
+  max-width: 20rem;
+  line-height: 2.3rem;
+  transition: all, 0.3s;
+}
+
+.auctionCard:hover {
+animation-name: rotate-card;
+animation-duration: 0.5s;
+animation-timing-function: ease-in-out;
+transform: scale(1);
+
+}
+
+@keyframes rotate-card {
+  from {
+    transform: rotate(0deg);
+    transform: scale(1);
+  }
+  to {
+    transform: rotate(360deg);
+    transform: scale(1.20);
+  }
+}
+
+.auctionCardHeading{
+ font-size: 1.8rem;
+ margin-bottom: .5rem;
+ color: blue;
+}
+
+.auctionCardDetail{
+  color: #111;
+
+}
+.auctionCardLink{
+  margin-top: .7rem;
+  color:indigo;
+
+}

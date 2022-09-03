@@ -1,0 +1,52 @@
+.header {
+  height: 90vh;
+  min-height: 90vh;
+  padding: 1rem 1rem;
+}
+
+.bgImage {
+background-image:
+    url('../../assests/heroBg.gif');
+  background-size: cover;
+  background-position: center;
+  filter: blur(8px);
+  height: 100%;
+  /* position: relative; */
+}
+
+.headerTextBox {
+  /* z-index: 100; */
+  background-color: #fff;
+  color: #fff;
+  font-weight: 500;
+  font-size: 2.5rem;
+ 
+}
+.headerBoxHeading {
+  color: rgb(211, 151, 77);
+  justify-self: left;
+  text-align: left;
+}
+.headerBox {
+border: rgba(221, 154, 154, 0.3) 8px outset;
+  padding: 1.5rem 3rem;
+  background-color: rgba(0, 0, 0, 0.4);
+  margin-right: 1rem;
+}
+.headerEvent {
+  position: absolute;
+  top: 20%;
+  left: 10%;
+}
+.headerContext {
+position: absolute;
+  top: 46%;
+  left: 50%;
+  margin-top: 1rem;
+}
+
+.headerAbout{
+  position: absolute;
+  top: 75%;
+  left: 20%;
+}
