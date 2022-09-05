@@ -3,12 +3,15 @@
 Bidding application
 
 # About
+
 This is a auction website where you can see internation as well as home league and buy the player for team.
 
-# Installing Dependencies 
-npm install
+# Installing Dependencies
+
+npm i
 
 # Run Project
+
 npm start
 
 # Project Demo Screenshot
