@@ -21,6 +21,8 @@ input {
 .tables {
   display: flex;
   justify-content: center;
+  flex-wrap: wrap;
+  margin-bottom: 1rem;
 }
 
 .table h3 {
@@ -28,7 +30,8 @@ input {
 }
 
 .winnerBtn {
-  margin: 1rem 0;
+  /* margin: 1rem 0; */
+  margin: auto 0;
   padding: 0.7rem 2.5rem;
   border: 4px;
   align-items: center;

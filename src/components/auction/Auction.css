@@ -1,3 +1,15 @@
+@keyframes rotate-card {
+  from {
+    transform: rotate(0deg);
+    transform: scale(1);
+  }
+
+  to {
+    transform: rotate(360deg);
+    transform: scale(1.20);
+  }
+}
+
 .headingTertiary {
   font-weight: 700;
   font-size: 3.2rem;
@@ -20,11 +32,11 @@
   justify-content: center;
 }
 .auctionCard {
-  padding: 1rem .5rem;
   font-weight: 500;
   border-radius: 4px;
   background-color: rgb(246, 239, 239, 0.2);
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
+  border: 2px #666 solid;
   margin: 1.5rem;
   padding: 1.5rem 1.5rem;
   max-width: 20rem;
@@ -40,16 +52,7 @@ transform: scale(1);
 
 }
 
-@keyframes rotate-card {
-  from {
-    transform: rotate(0deg);
-    transform: scale(1);
-  }
-  to {
-    transform: rotate(360deg);
-    transform: scale(1.20);
-  }
-}
+
 
 .auctionCardHeading{
  font-size: 1.8rem;
@@ -62,7 +65,14 @@ transform: scale(1);
 
 }
 .auctionCardLink{
+  margin: 0 auto;
+  text-align: center;
+  display: inline-block;
+  justify-content: center;
   margin-top: .7rem;
+  background-color: rgba(132, 157, 179, 0.8);
+  border-radius: 4px;
+  padding: .3rem .8rem;
   color:indigo;
 
 }
