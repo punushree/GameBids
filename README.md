@@ -1,5 +1,3 @@
-# GameBids
-
 Bidding application
 
 # About
