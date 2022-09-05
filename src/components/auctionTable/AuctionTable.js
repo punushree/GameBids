@@ -8,20 +8,13 @@ const AuctionTable = () => {
     input3: '',
     input4: '',
   });
-  const [baseValue, setBaseValue] = useState(100);
-  // const [input1, setInput1] = useState(0);
-  // const [input2, setInput2] = useState(0);
-  // const [input3, setInput3] = useState(0);
-  // const [input4, setInput4] = useState(0);
+  const [baseValue, setBaseValue] = useState();
+
   const { input1, input2, input3, input4 } = auction;
+
   const changeHandler = (e) => {
     setAuction({ ...auction, [e.target.name]: e.target.value });
   };
-  //   setInput1(e.target.value);
-  //   setInput2(e.target.value);
-  //   setInput3(e.target.value);
-  //   setInput4(e.target.value);
-  // };
 
   let value1, value2, value3, value4;
   const submitHandler1 = () => {
@@ -50,7 +43,7 @@ const AuctionTable = () => {
     console.log(maxi2);
     const maxi = Math.max(maxi1, maxi2);
     console.log(maxi);
-    window.alert(`Highest bid on this player is ${maxi}. SOLD!!!!`);
+    window.alert(`Highest bid on this player is ${parseInt(maxi)}. SOLD!!!!`);
   };
 
   const players = [
@@ -76,17 +69,20 @@ const AuctionTable = () => {
     },
   ];
 
-  // const selectPlayer = (e) => {
-  //   const value = e.target.value;
-  //   const filteredBase = players.filter((p) => p.name === value);
+  const selectPlayer = (e) => {
+    const value = e.target.value;
+    const filteredBase = players.filter((p) => p.name === value);
 
-  //   setBaseValue(filteredBase);
-  // };
+    setBaseValue(filteredBase);
+  };
 
   return (
-    <div>
+    <div className='auctionTable'>
       <div>
-        <select name='players' id='players'>
+        <select name='players' id='players' onChange={selectPlayer}>
+          <option value='select' default>
+            Select
+          </option>
           {players.map((player) => (
             <>
               <option key={player.id} value={player.name}>
@@ -95,16 +91,11 @@ const AuctionTable = () => {
             </>
           ))}
         </select>
-        {/* {baseValue.map((b) => (
-          <div>{b.base}</div>
-        ))} */}
-
-        <h2>Hardik Pandya</h2>
-        <p>Base Prize : 100</p>
+        {baseValue && baseValue.map((b) => <p>{b.base}</p>)}
       </div>
       <div className='tables'>
         <div className='table'>
-          <p>Table 1</p>
+          <h3>Table 1</h3>
           <input
             id='input1'
             type='number'
@@ -115,7 +106,7 @@ const AuctionTable = () => {
           <button onClick={submitHandler1}>Send</button>
         </div>
         <div className='table'>
-          <p>Table 2</p>
+          <h3>Table 2</h3>
           <input
             id='input2'
             type='number'
@@ -126,7 +117,7 @@ const AuctionTable = () => {
           <button onClick={submitHandler2}>Send</button>
         </div>
         <div className='table'>
-          <p>Table 3</p>
+          <h3>Table 3</h3>
           <input
             id='input3'
             type='number'
@@ -137,7 +128,7 @@ const AuctionTable = () => {
           <button onClick={submitHandler3}>Send</button>
         </div>
         <div className='table'>
-          <p>Table 4</p>
+          <h3>Table 4</h3>
           <input
             id='input4'
             type='number'
@@ -148,8 +139,10 @@ const AuctionTable = () => {
           <button onClick={submitHandler4}>Send</button>
         </div>
       </div>
-      <button onClick={checkWinner}>Winner</button>
-      <h2>Sold to </h2>
+      <button onClick={checkWinner} className='winnerBtn'>
+        Winner
+      </button>
+      {/* <h2>Sold to </h2> */}
     </div>
   );
 };

@@ -1,7 +1,25 @@
 .auction {
-  height: 90vh;
+  background-color: rgba(0, 0, 0, 0.5);
 }
 
-.auctionHeading {
-  font-size: 1.5rem;
+.auctionHeading{
+  font-size: 3rem;
+}
+
+.leagueCard {
+  display: flex;
+  padding: 2rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.auctionTable h2 {
+  font-size: 2.4rem;
+  margin-bottom: 1.2rem;
+
+}
+.auctionTable p {
+  font-size: 1.7rem;
+  margin-bottom: 1rem ;
+
 }

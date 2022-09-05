@@ -1,0 +1,55 @@
+
+.cardBox {
+  max-width: 20rem;
+  border-radius: 5px;
+  margin: 1.5rem;
+  padding: 2rem 2rem;
+  border: 1px black solid;
+  display: inline-block;
+  overflow: hidden;
+  /* margin-right: 2rem; */
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+
+}
+
+.cardBox:not(:last-child) {
+  margin-right: 3rem;
+}
+
+.cardBox:hover {
+  /* background-color: rgba(147, 200, 222, 0.2); */
+  transform: translateY(-3px);
+}
+
+.cardBoxHeading {
+  color: rgb(211, 151, 77);
+  font-size: 2.4rem;
+  text-transform: uppercase;
+}
+
+.cardBoxText {
+  font-size: 1.2rem;
+  color: #fff;
+}
+
+.cardBoxDetail {
+  margin-top: 1rem;
+  font-weight: 700;
+}
+
+.cardBox button {
+  padding: 0.5rem 1rem;
+  font-size: 1.4rem;
+  border-radius: 5px;
+  margin-top: 1rem;
+  font-weight: bold;
+  background-color: white;
+  color: black;
+  transition: all 0.2s;
+}
+
+.planBox button:active {
+  transform: translateY(2px);
+  background-color: rgba(254, 238, 149, 0.2);
+  color: #fff;
+}
