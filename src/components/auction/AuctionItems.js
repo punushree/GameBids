@@ -8,7 +8,7 @@ const AuctionItems = ({ auction }) => {
         <h4 className='auctionCardHeading'>{auction.league}</h4>
         <p className='auctionCardDetail'>{auction.details}</p>
         <Link to='/auction' className='auctionCardLink'>
-          More info..
+          More info
         </Link>
       </div>
     </>

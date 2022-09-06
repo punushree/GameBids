@@ -1,7 +1,7 @@
 .header {
   height: 90vh;
   min-height: 90vh;
-  padding: 1rem 1rem;
+  padding: 1rem .5rem;
 }
 
 .bgImage {
@@ -40,7 +40,7 @@ border: rgba(221, 154, 154, 0.3) 8px outset;
 }
 .headerContext {
 position: absolute;
-  top: 46%;
+  top: 45%;
   left: 50%;
   margin-top: 1rem;
 }

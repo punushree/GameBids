@@ -16,14 +16,14 @@ const Auction = () => {
       league: 'PPL',
       country: 'Pakistan',
       detail:
-        'Adipisicing elit. Fugiat eveniet consectetur a non esse neque illo voluptates beatae eos quae optio numquam.',
+        'Adipisicing elit. Fugiat eveniet consectetur a non esse neque illo voluptates beatae eos eveniet quae optio numquam.',
     },
     {
       id: 3,
       league: 'DPL',
       country: 'Dubai',
       detail:
-        'Lorem ipsum dolor sit Fugiat eveniet non esse neque illo voluptates beatae eos quae optio numquam.',
+        'Lorem ipsum dolor sit Fugiat eveniet non esse neque illo voluptates beatae eos quae optio numquam eveniet.',
     },
     {
       id: 4,
@@ -47,14 +47,14 @@ const Auction = () => {
       league: 'MPL',
       country: 'India',
       detail:
-        'Adipisicing elit. Fugiat eveniet consectetur a non esse neque illo voluptates beatae eos quae optio numquam.',
+        'Adipisicing elit. Fugiat eveniet consectetur a non esse neque illo voluptates beatae eos eveniet quae optio numquam.',
     },
     {
       id: 3,
       league: 'TNL',
       country: 'India',
       detail:
-        'Lorem ipsum dolor sit Fugiat eveniet non esse neque illo voluptates beatae eos quae optio numquam.',
+        'Lorem ipsum dolor sit Fugiat eveniet non esse neque illo voluptates beatae eos quae optio numquam eveniet.',
     },
     {
       id: 4,

@@ -11,39 +11,57 @@ const AuctionTable = () => {
   const [baseValue, setBaseValue] = useState();
 
   const { input1, input2, input3, input4 } = auction;
+  let minValueOfPlayer,
+    auctionValue = [];
+
+  if (baseValue !== undefined) {
+    minValueOfPlayer = baseValue.map((b) => b.base);
+  }
 
   const changeHandler = (e) => {
-    setAuction({ ...auction, [e.target.name]: e.target.value });
+    setAuction({
+      ...auction,
+      [e.target.name]: e.target.value,
+    });
   };
 
-  let value1, value2, value3, value4;
   const submitHandler1 = () => {
-    value1 = parseInt(input1);
-    console.log(value1);
-    console.log(typeof value1);
-    console.log(isNaN(value1));
+    auctionValue.push(input1, input2, input3, input4);
   };
   const submitHandler2 = () => {
-    value2 = parseInt(input2);
-    console.log(typeof value2);
+    auctionValue.push(input1, input2, input3, input4);
   };
   const submitHandler3 = () => {
-    value3 = parseInt(input3);
+    auctionValue.push(input1, input2, input3, input4);
   };
   const submitHandler4 = () => {
-    value4 = parseInt(input4);
+    auctionValue.push(input1, input2, input3, input4);
   };
 
   const checkWinner = (e) => {
-    console.log('click');
     e.preventDefault();
-    let maxi1 = Math.max(value1, value2);
-    console.log(maxi1);
-    const maxi2 = Math.max(value3, value4);
-    console.log(maxi2);
-    const maxi = Math.max(maxi1, maxi2);
-    console.log(maxi);
-    window.alert(`Highest bid on this player is ${parseInt(maxi)}. SOLD!!!!`);
+    console.log(auctionValue);
+
+    const maxi = findMax(auctionValue);
+
+    function findMax(arr) {
+      let maxValue = arr[0];
+      for (let i = 0; i < arr.length; i++) {
+        if (arr[i] > maxValue) {
+          maxValue = arr[i];
+        }
+      }
+      return maxValue;
+    }
+    setAuction({ ...auction, input1: '', input2: '', input3: '', input4: '' });
+    window.alert(`Highest bid on this player is ${maxi}. SOLD!!!!`);
+  };
+
+  const selectPlayer = (e) => {
+    const value = e.target.value;
+    const filteredBase = players.filter((p) => p.name === value);
+
+    setBaseValue(filteredBase);
   };
 
   const players = [
@@ -69,13 +87,6 @@ const AuctionTable = () => {
     },
   ];
 
-  const selectPlayer = (e) => {
-    const value = e.target.value;
-    const filteredBase = players.filter((p) => p.name === value);
-
-    setBaseValue(filteredBase);
-  };
-
   return (
     <div className='auctionTable'>
       <div>
@@ -91,7 +102,9 @@ const AuctionTable = () => {
             </>
           ))}
         </select>
-        {baseValue && baseValue.map((b) => <p>{b.base}</p>)}
+        {baseValue && minValueOfPlayer && (
+          <p>Base Value : {minValueOfPlayer}</p>
+        )}
       </div>
       <div className='tables'>
         <div className='table'>
@@ -142,7 +155,6 @@ const AuctionTable = () => {
       <button onClick={checkWinner} className='winnerBtn'>
         Winner
       </button>
-      {/* <h2>Sold to </h2> */}
     </div>
   );
 };

@@ -11,7 +11,6 @@ const Navbar = () => {
         <Link to='/auction'>Auction</Link>
         <p>Pricing</p>
         <p>League</p>
-        <p>Contact Us</p>
       </div>
     </div>
   );
