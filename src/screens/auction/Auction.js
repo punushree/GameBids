@@ -1,3 +1,4 @@
+import { useState } from "react";
 import AuctionTable from '../../components/auctionTable/AuctionTable';
 import Card from '../../components/card/Card';
 import './Auction.css';
@@ -64,8 +65,33 @@ const Auction = () => {
         'consectetur adipisicing elit. Fugiat eveniet non esse neque illo voluptates beatae eos quae optio numquam.',
     },
   ];
+  const [message, setMessage] = useState("");
+  const [type, setType] = useState("");
+  const closeAlert = () => {
+    setMessage("");
+  };
+  const alert_data = (maxi) => {
+    console.log(maxi);
+    window.scrollTo({top: 0, behavior: 'smooth'})
+    if (maxi) {
+      setMessage(`Highest bid on this player is ${maxi}. SOLD!!!!`);
+      setType("success alert");
+
+    } else {
+      setMessage(`Bidding not started for player`);
+      setType("info alert");
+    }
+  }
   return (
     <div className='auction'>
+        {message && (
+        <div className={type}>
+          {message}
+          <span className="closebtn" onClick={closeAlert}>
+            &times;
+          </span>{" "}
+        </div>
+      )}
       <h2 className='auctionHeading'>Internation Match</h2>
       <div className='leagueCard'>
         {internationalLeague.map((league) => (
@@ -82,7 +108,7 @@ const Auction = () => {
       <div className='auctionTable'>
         <h2>Indian Premier League</h2>
         <p>Lorem ipsum dolor sit amet consectetur adipisicing.</p>
-        <AuctionTable />
+        <AuctionTable func={alert_data}/>
       </div>
     </div>
   );

@@ -6,8 +6,8 @@ const Header = () => {
       <div className='bgImage'></div>
       <div className='headerTextBox'>
         <div className='headerBox headerContext'>
-          <p className='headerBoxHeading'>Context</p>
-          <p>Place the highest bid and win the context</p>
+          <p className='headerBoxHeading'>Contest</p>
+          <p>Place the highest bid and win the contest</p>
         </div>
         <div className='headerBox headerAbout'>
           <p className='headerBoxHeading'>About</p>

@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import './AuctionTable.css';
 
-const AuctionTable = () => {
+const AuctionTable = (props) => {
   const [auction, setAuction] = useState({
     input1: '',
     input2: '',
@@ -54,7 +54,9 @@ const AuctionTable = () => {
       return maxValue;
     }
     setAuction({ ...auction, input1: '', input2: '', input3: '', input4: '' });
-    window.alert(`Highest bid on this player is ${maxi}. SOLD!!!!`);
+    console.log(`Highest bid on this player is ${maxi}. SOLD!!!!`);
+    props.func(maxi);
+
   };
 
   const selectPlayer = (e) => {
