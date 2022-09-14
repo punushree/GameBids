@@ -70,17 +70,11 @@ const Auction = () => {
   const closeAlert = () => {
     setMessage("");
   };
-  const alert_data = (maxi) => {
-    console.log(maxi);
+  const alert_data = (msg) => {
+    console.log(msg);
     window.scrollTo({top: 0, behavior: 'smooth'})
-    if (maxi) {
-      setMessage(`Highest bid on this player is ${maxi}. SOLD!!!!`);
-      setType("success alert");
-
-    } else {
-      setMessage(`Bidding not started for player`);
-      setType("info alert");
-    }
+    setMessage(msg);
+    setType("info alert");
   }
   return (
     <div className='auction'>

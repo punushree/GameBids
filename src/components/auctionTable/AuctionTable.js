@@ -54,8 +54,16 @@ const AuctionTable = (props) => {
       return maxValue;
     }
     setAuction({ ...auction, input1: '', input2: '', input3: '', input4: '' });
-    console.log(`Highest bid on this player is ${maxi}. SOLD!!!!`);
-    props.func(maxi);
+    console.log(maxi+" "+minValueOfPlayer);
+    if (maxi) {
+      if (parseInt(maxi) < parseInt(minValueOfPlayer)) {
+        props.func(`Bidding amounts less than base value`);
+      } else {
+        props.func(`Highest bid on this player is ${maxi}. SOLD!!!!`);
+      }
+    } else {
+      props.func(`Bidding not started for player`);
+    }
 
   };
 
@@ -97,11 +105,10 @@ const AuctionTable = (props) => {
             Select
           </option>
           {players.map((player) => (
-            <>
+            
               <option key={player.id} value={player.name}>
                 {player.name}
               </option>
-            </>
           ))}
         </select>
         {baseValue && minValueOfPlayer && (
