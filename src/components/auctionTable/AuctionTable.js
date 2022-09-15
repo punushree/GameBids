@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import './AuctionTable.css';
 
-const AuctionTable = () => {
+const AuctionTable = (props) => {
   const [auction, setAuction] = useState({
     input1: '',
     input2: '',
@@ -54,7 +54,17 @@ const AuctionTable = () => {
       return maxValue;
     }
     setAuction({ ...auction, input1: '', input2: '', input3: '', input4: '' });
-    window.alert(`Highest bid on this player is ${maxi}. SOLD!!!!`);
+    console.log(maxi+" "+minValueOfPlayer);
+    if (maxi) {
+      if (parseInt(maxi) < parseInt(minValueOfPlayer)) {
+        props.func(`Bidding amounts less than base value`);
+      } else {
+        props.func(`Highest bid on this player is ${maxi}. SOLD!!!!`);
+      }
+    } else {
+      props.func(`Bidding not started for player`);
+    }
+
   };
 
   const selectPlayer = (e) => {
@@ -95,11 +105,10 @@ const AuctionTable = () => {
             Select
           </option>
           {players.map((player) => (
-            <>
+            
               <option key={player.id} value={player.name}>
                 {player.name}
               </option>
-            </>
           ))}
         </select>
         {baseValue && minValueOfPlayer && (
